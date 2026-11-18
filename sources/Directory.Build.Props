@@ -1,0 +1,11 @@
+<Project>
+	<PropertyGroup>
+		<TargetFramework>net11.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ProjectName>LifeWeave</ProjectName>
+		<Authors>Lappriou</Authors>
+		<RootNamespace>$(ProjectName).$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+		<AssemblyName>$(ProjectName).$(MSBuildProjectName)</AssemblyName>
+	</PropertyGroup>
+</Project>

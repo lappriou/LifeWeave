@@ -1,4 +1,4 @@
-using Apps.BlazorApp.Components;
+using LifeWeave.Apps.BlazorApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +23,6 @@ app.MapStaticAssets();
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(Apps.BlazorApp.Client._Imports).Assembly);
+    .AddAdditionalAssemblies(typeof(LifeWeave.Apps.BlazorApp.Client._Imports).Assembly);
 
 app.Run();

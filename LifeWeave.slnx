@@ -1,4 +1,9 @@
 <Solution>
-  <Project Path="sources/apps/Apps.BlazorApp/Apps.BlazorApp.Client/Apps.BlazorApp.Client.csproj" Id="9152cf7d-0115-4bda-8861-ca4f9e526d23" />
-  <Project Path="sources/apps/Apps.BlazorApp/Apps.BlazorApp/Apps.BlazorApp.csproj" Id="7e57f248-66d6-4a4d-bafb-114c7b143240" />
+  <Folder Name="/Apps/">
+    <Project Path="sources/apps/Apps.BlazorApp/Apps.BlazorApp.Client/Apps.BlazorApp.Client.csproj" Id="9152cf7d-0115-4bda-8861-ca4f9e526d23" />
+    <Project Path="sources/apps/Apps.BlazorApp/Apps.BlazorApp/Apps.BlazorApp.csproj" Id="7e57f248-66d6-4a4d-bafb-114c7b143240" />
+  </Folder>
+  <Folder Name="/Components/">
+    <Project Path="sources/components/Infrastructures.AspireServiceDefaults/Infrastructures.AspireServiceDefaults.csproj" Id="2c858fd1-b8bf-4f8d-8a5d-e9acdbbb6baf" />
+  </Folder>
 </Solution>

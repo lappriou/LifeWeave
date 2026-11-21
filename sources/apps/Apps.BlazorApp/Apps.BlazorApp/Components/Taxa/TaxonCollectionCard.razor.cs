@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 
 using System.Collections.ObjectModel;
 
-namespace LifeWeave.Apps.BlazorApp.Taxa;
+namespace LifeWeave.Apps.BlazorApp.Components.Taxa;
 
 public partial class TaxonCollectionCard
 {

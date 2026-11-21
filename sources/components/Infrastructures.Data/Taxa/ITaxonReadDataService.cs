@@ -1,4 +1,4 @@
-﻿namespace LifeWeave.Infrastructures.Data.Taxons;
+﻿namespace LifeWeave.Infrastructures.Data.Taxa;
 
 public interface ITaxonReadDataService
 {

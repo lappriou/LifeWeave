@@ -1,4 +1,5 @@
 using LifeWeave.Infrastructures.Data;
+using LifeWeave.Infrastructures.Data.Taxa;
 
 var builder = WebApplication.CreateBuilder(args);
 

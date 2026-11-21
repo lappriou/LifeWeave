@@ -1,6 +1,6 @@
-﻿namespace LifeWeave.Infrastructures.Data.Taxons;
+﻿namespace LifeWeave.Infrastructures.Data.Taxa;
 
-public record TaxonDataDto
+public class TaxonEFEntity
 {
     public required Guid ID { get; set; }
     public required string NameScientific { get; set; }

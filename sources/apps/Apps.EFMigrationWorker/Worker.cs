@@ -1,5 +1,5 @@
 using LifeWeave.Infrastructures.Data;
-using LifeWeave.Infrastructures.Data.Taxons;
+using LifeWeave.Infrastructures.Data.Taxa;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -62,7 +62,7 @@ public class Worker(IServiceProvider serviceProvider,
             await using var transaction = await dbContext.Database
                 .BeginTransactionAsync(cancellationToken);
 
-            await dbContext.Taxons.AddAsync(firstTaxon, cancellationToken);
+            await dbContext.Taxa.AddAsync(firstTaxon, cancellationToken);
             await dbContext.SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
         });

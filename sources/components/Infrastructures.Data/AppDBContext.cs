@@ -1,4 +1,4 @@
-﻿using LifeWeave.Infrastructures.Data.Taxons;
+﻿using LifeWeave.Infrastructures.Data.Taxa;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -10,5 +10,5 @@ public class AppDBContext : DbContext
     {
     }
 
-    public DbSet<TaxonEFEntity> Taxons { get; set; }
+    public DbSet<TaxonEFEntity> Taxa { get; set; }
 }

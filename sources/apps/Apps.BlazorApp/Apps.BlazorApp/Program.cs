@@ -1,6 +1,8 @@
 using LifeWeave.Infrastructures.Data;
 using LifeWeave.Infrastructures.Data.Taxa;
 
+using MudBlazor.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddNpgsqlDbContext<AppDBContext>("postgresdb");
@@ -11,7 +13,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.AddServiceDefaults();
-
+builder.Services.AddMudServices();
 builder.Services.AddTransient<ITaxonReadDataService, TaxonReadDataService>();
 var app = builder.Build();
 

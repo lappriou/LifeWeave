@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MudBlazor" Version="9.14.0" />
     <ProjectReference Include="..\..\..\components\Infrastructures.AspireServiceDefaults\Infrastructures.AspireServiceDefaults.csproj" />
     <ProjectReference Include="..\..\..\components\Infrastructures.Data\Infrastructures.Data.csproj" />
     <ProjectReference Include="..\Apps.BlazorApp.Client\Apps.BlazorApp.Client.csproj" />

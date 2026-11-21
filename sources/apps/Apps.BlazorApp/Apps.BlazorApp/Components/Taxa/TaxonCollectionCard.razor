@@ -1,8 +1,12 @@
 ﻿<div>
-    <ul>
-        @foreach (var taxon in TaxonObservableCollection)
-        {
-            <li>@taxon.NameScientific</li>
-        }
-    </ul>
+    @foreach (var taxon in TaxonObservableCollection)
+    {
+        <MudCard Style="width: 300px; margin: 10px;">
+            <MudCardHeader>
+                <h2>@taxon.NameScientific</h2>
+            </MudCardHeader>
+            <MudCardContent>
+            </MudCardContent>
+        </MudCard>
+    }
 </div>

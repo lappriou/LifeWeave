@@ -1,4 +1,5 @@
 using LifeWeave.Infrastructures.Data;
+using LifeWeave.Infrastructures.Data.Taxons;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,7 @@ public class Worker(IServiceProvider serviceProvider,
             var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
 
             await RunMigrationAsync(dbContext, cancellationToken);
+            await SeedDataAsync(dbContext, cancellationToken);
         }
         catch (Exception ex)
         {
@@ -41,6 +43,28 @@ public class Worker(IServiceProvider serviceProvider,
         {
             // Run migration in a transaction to avoid partial migration if it fails.
             await dbContext.Database.MigrateAsync(cancellationToken);
+        });
+    }
+
+    private static async Task SeedDataAsync(
+    AppDBContext dbContext, CancellationToken cancellationToken)
+    {
+        TaxonEFEntity firstTaxon = new()
+        {
+            ID = Guid.NewGuid(),
+            NameScientific = "Bombus mirus (Tkalcu, 1968)"
+        };
+
+        var strategy = dbContext.Database.CreateExecutionStrategy();
+        await strategy.ExecuteAsync(async () =>
+        {
+            // Seed the database
+            await using var transaction = await dbContext.Database
+                .BeginTransactionAsync(cancellationToken);
+
+            await dbContext.Taxons.AddAsync(firstTaxon, cancellationToken);
+            await dbContext.SaveChangesAsync(cancellationToken);
+            await transaction.CommitAsync(cancellationToken);
         });
     }
 }

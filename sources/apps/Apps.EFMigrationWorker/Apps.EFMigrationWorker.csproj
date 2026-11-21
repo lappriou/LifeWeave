@@ -1,9 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Worker">
 
   <PropertyGroup>
-    <TargetFramework>net11.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-Apps.EFMigrationWorker-86f642c3-0a5a-4bd1-b283-cd1da74118f9</UserSecretsId>
   </PropertyGroup>
 

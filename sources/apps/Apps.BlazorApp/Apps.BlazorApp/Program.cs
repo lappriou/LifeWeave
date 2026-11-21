@@ -1,7 +1,8 @@
-using LifeWeave.Apps.BlazorApp.Components;
-using LifeWeave.Infrastructures.AspireServiceDefaults;
+using LifeWeave.Infrastructures.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.AddNpgsqlDbContext<AppDBContext>("postgresdb");
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
@@ -9,6 +10,8 @@ builder.Services.AddRazorComponents()
     .AddInteractiveWebAssemblyComponents();
 
 builder.AddServiceDefaults();
+
+builder.Services.AddTransient<ITaxonReadDataService, TaxonReadDataService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

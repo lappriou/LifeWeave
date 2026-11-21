@@ -1,4 +1,5 @@
 using LifeWeave.Apps.BlazorApp.Components;
+using LifeWeave.Infrastructures.AspireServiceDefaults;
 
 var builder = WebApplication.CreateBuilder(args);
 

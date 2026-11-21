@@ -1,6 +1,3 @@
-
-using LifeWeave.Apps.BlazorApp.Infrastructures.Data;
-
 var builder = DistributedApplication.CreateBuilder(args);
 
 var postgres = builder.AddPostgres("postgres")

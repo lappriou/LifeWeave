@@ -1,4 +1,4 @@
-﻿namespace LifeWeave.Apps.BlazorApp.Features.Taxons.Infrastructures.Data;
+﻿namespace LifeWeave.Infrastructures.Data.Taxons;
 
 public record TaxonDataDto
 {

@@ -1,10 +1,10 @@
-using LifeWeave.Apps.BlazorApp.Infrastructures.Data;
+using LifeWeave.Infrastructures.Data;
 
 using Microsoft.EntityFrameworkCore;
 
 using System.Diagnostics;
 
-namespace Apps.EFMigrationWorker;
+namespace LifeWeave.Apps.EFMigrationWorker;
 
 public class Worker(IServiceProvider serviceProvider,
     IHostApplicationLifetime hostApplicationLifetime) : BackgroundService

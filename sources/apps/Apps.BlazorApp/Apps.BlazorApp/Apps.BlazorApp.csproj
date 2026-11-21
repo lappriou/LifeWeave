@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\components\Infrastructures.AspireServiceDefaults\Infrastructures.AspireServiceDefaults.csproj" />
+    <ProjectReference Include="..\..\..\components\Infrastructures.Data\Infrastructures.Data.csproj" />
     <ProjectReference Include="..\Apps.BlazorApp.Client\Apps.BlazorApp.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="11.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="11.0.0" />

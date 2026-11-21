@@ -18,6 +18,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\components\Infrastructures.AspireServiceDefaults\Infrastructures.AspireServiceDefaults.csproj" />
-    <ProjectReference Include="..\Apps.BlazorApp\Apps.BlazorApp\Apps.BlazorApp.csproj" />
+    <ProjectReference Include="..\..\components\Infrastructures.Data\Infrastructures.Data.csproj" />
   </ItemGroup>
 </Project>

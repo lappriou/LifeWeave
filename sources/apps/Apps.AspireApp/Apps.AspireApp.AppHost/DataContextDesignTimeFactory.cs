@@ -1,9 +1,7 @@
-﻿using LifeWeave.Apps.BlazorApp.Infrastructures.Data;
+﻿using LifeWeave.Infrastructures.Data;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-
-using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 namespace LifeWeave.Apps.AspireApp.AppHost;
 

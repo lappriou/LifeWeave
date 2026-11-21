@@ -1,8 +1,8 @@
-﻿using LifeWeave.Apps.BlazorApp.Features.Taxons.Infrastructures.Data;
+﻿using LifeWeave.Infrastructures.Data.Taxons;
 
 using Microsoft.EntityFrameworkCore;
 
-namespace LifeWeave.Apps.BlazorApp.Infrastructures.Data;
+namespace LifeWeave.Infrastructures.Data;
 
 public class AppDBContext : DbContext
 {

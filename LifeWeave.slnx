@@ -7,5 +7,6 @@
   </Folder>
   <Folder Name="/Components/">
     <Project Path="sources/components/Infrastructures.AspireServiceDefaults/Infrastructures.AspireServiceDefaults.csproj" Id="2c858fd1-b8bf-4f8d-8a5d-e9acdbbb6baf" />
+    <Project Path="sources/components/Infrastructures.Data/Infrastructures.Data.csproj" />
   </Folder>
 </Solution>

@@ -1,6 +1,6 @@
-using Apps.EFMigrationWorker;
-
-using LifeWeave.Apps.BlazorApp.Infrastructures.Data;
+using LifeWeave.Apps.EFMigrationWorker;
+using LifeWeave.Infrastructures.AspireServiceDefaults;
+using LifeWeave.Infrastructures.Data;
 
 var builder = Host.CreateApplicationBuilder(args);
 

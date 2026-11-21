@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-Apps.EFMigrationWorker-86f642c3-0a5a-4bd1-b283-cd1da74118f9</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.6.5" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="11.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\components\Infrastructures.AspireServiceDefaults\Infrastructures.AspireServiceDefaults.csproj" />
+    <ProjectReference Include="..\Apps.BlazorApp\Apps.BlazorApp\Apps.BlazorApp.csproj" />
+  </ItemGroup>
+</Project>

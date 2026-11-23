@@ -52,6 +52,7 @@ public class Worker(IServiceProvider serviceProvider,
         TaxonEFEntity firstTaxon = new()
         {
             ID = Guid.NewGuid(),
+            ColID = "68NQ4",
             NameScientific = "Bombus mirus (Tkalcu, 1968)"
         };
 

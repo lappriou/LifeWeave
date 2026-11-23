@@ -8,6 +8,7 @@ public class TaxonReadDataService(AppDBContext _dbContext) : ITaxonReadDataServi
             .Select(t => new TaxonDataDto
             {
                 ID = t.ID,
+                ColID = t.ColID,
                 NameScientific = t.NameScientific
             })
             .ToArrayAsync();

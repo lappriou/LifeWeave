@@ -16,7 +16,7 @@ partial class AppDBContextModelSnapshot : ModelSnapshot
     // If you encounter a merge conflict in the line below, it means you need to
     // discard one of the migration branches and recreate its migrations on top of
     // the other branch. See https://aka.ms/efcore-docs-migrations-conflicts for more info.
-    public override string LastMigrationId => "20261121093601_Taxons_Rename_Taxa";
+    public override string LastMigrationId => "20261123154458_Taxons_Columns_COLID_Create";
 
     protected override void BuildModel(ModelBuilder modelBuilder)
     {
@@ -33,11 +33,18 @@ partial class AppDBContextModelSnapshot : ModelSnapshot
                     .ValueGeneratedOnAdd()
                     .HasColumnType("uuid");
 
+                b.Property<string>("ColID")
+                    .IsRequired()
+                    .HasColumnType("text");
+
                 b.Property<string>("NameScientific")
                     .IsRequired()
                     .HasColumnType("text");
 
                 b.HasKey("ID");
+
+                b.HasIndex("ColID")
+                    .IsUnique();
 
                 b.ToTable("Taxa");
             });

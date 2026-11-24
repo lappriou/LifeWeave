@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace LifeWeave.Apps.BlazorApp.Components.Taxa;
 
-public partial class TaxonCollectionCard
+public partial class TaxonCollectionCardBlazorComponent
 {
     [Inject]
     private ITaxonReadDataService TaxonReadDataService { get; set; } = default!;

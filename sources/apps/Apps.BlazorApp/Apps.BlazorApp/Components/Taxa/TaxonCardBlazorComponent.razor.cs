@@ -1,10 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Rendering;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 
 namespace LifeWeave.Apps.BlazorApp.Components.Taxa;
@@ -13,6 +7,7 @@ public partial class TaxonCardBlazorComponent
 {
     public const string ColLinkName = "Catalogue of Life";
     public const string ColTaxonUrlBase = "https://www.catalogueoflife.org/data/taxon/";
+
     [Parameter]
     public TaxonDataDto Taxon { get; set; }
 
@@ -28,6 +23,4 @@ public partial class TaxonCardBlazorComponent
 
         ColHref = $"{ColTaxonUrlBase}{Taxon.ColID}";
     }
-
-
 }

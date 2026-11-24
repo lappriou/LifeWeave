@@ -1,13 +1,6 @@
 ﻿<div>
     @foreach (var taxon in TaxonObservableCollection)
     {
-        <MudCard Style="width: 300px; margin: 10px;">
-            <MudCardHeader>
-                <h2>@taxon.NameScientific</h2>
-            </MudCardHeader>
-            <MudCardContent>
-                Col ID: @taxon.ColID
-            </MudCardContent>
-        </MudCard>
+        <TaxonCardBlazorComponent Taxon="taxon" />
     }
 </div>

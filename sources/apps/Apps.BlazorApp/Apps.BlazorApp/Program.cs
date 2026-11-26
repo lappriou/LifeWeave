@@ -2,6 +2,7 @@ using LifeWeave.Infrastructures.Data;
 using LifeWeave.Infrastructures.Data.Taxa;
 
 using MudBlazor.Services;
+using ReactiveUI.Builder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,9 @@ builder.Services.AddRazorComponents()
 
 builder.AddServiceDefaults();
 builder.Services.AddMudServices();
+RxAppBuilder.CreateReactiveUIBuilder()
+    .WithBlazor()
+    .BuildApp();
 builder.Services.AddTransient<ITaxonReadDataService, TaxonReadDataService>();
 var app = builder.Build();
 

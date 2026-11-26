@@ -1,10 +1,15 @@
-﻿<MudCard Style="width: 300px; margin: 10px;">
-    <MudCardHeader>
-        <h2>@Taxon.NameScientific</h2>
-    </MudCardHeader>
-    <MudCardContent>
-        <div>
-            <MudLink Href="@ColHref" Target="_blank">@ColLinkName</MudLink>
-        </div>
-    </MudCardContent>
-</MudCard>
+﻿@inherits ReactiveComponentBase<TaxonCardViewModel>
+
+@if (ViewModel?.Taxon != null)
+{
+    <MudCard Style="width: 300px; margin: 10px;">
+        <MudCardHeader>
+            <h2>@ViewModel.Taxon.NameScientific</h2>
+        </MudCardHeader>
+        <MudCardContent>
+            <div>
+                <MudLink Href="@ViewModel.ColHref" Target="_blank">@TaxonCardViewModel.ColLinkName</MudLink>
+            </div>
+        </MudCardContent>
+    </MudCard>
+}

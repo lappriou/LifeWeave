@@ -18,6 +18,15 @@ public class TaxonCardViewModel : ViewModelBase, IDisposable
         private set => this.RaiseAndSetIfChanged(ref field, value);
     }
 
+    public const string GbifLinkName = "Gbif";
+    public const string GbifTaxonUrlBase = "https://www.gbif.org/taxon/";
+
+    public string GbifHref
+    {
+        get;
+        private set => this.RaiseAndSetIfChanged(ref field, value);
+    }
+
     public TaxonDataDto? Taxon
     {
         get;
@@ -31,6 +40,7 @@ public class TaxonCardViewModel : ViewModelBase, IDisposable
             if (taxon != null)
             {
                 ColHref = $"{ColTaxonUrlBase}{taxon.ColID}";
+                GbifHref = $"{GbifTaxonUrlBase}{taxon.ColID}";
             }
         });
 

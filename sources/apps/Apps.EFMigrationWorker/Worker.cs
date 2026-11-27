@@ -49,11 +49,44 @@ public class Worker(IServiceProvider serviceProvider,
     private static async Task SeedDataAsync(
     AppDBContext dbContext, CancellationToken cancellationToken)
     {
-        TaxonEFEntity firstTaxon = new()
+        var taxons = new List<TaxonEFEntity>
         {
-            ID = Guid.NewGuid(),
-            ColID = "68NQ4",
-            NameScientific = "Bombus mirus (Tkalcu, 1968)"
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "68NQ4",
+                NameScientific = "Bombus mirus (Tkalcu, 1968)"
+            },
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "MFWK",
+                NameScientific = "Bombus terrestris (Linnaeus, 1758)"
+            },
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "3LPXD",
+                NameScientific = "Hieracium jonassonii Ósk"
+            },
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "6ZXKC",
+                NameScientific = "Streptomyces caeruleatus Zhu et al., 2011"
+            },
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "3BZKR",
+                NameScientific = "Eudendrium rameum (Pallas, 1766)"
+            },
+            new TaxonEFEntity
+            {
+                ID = Guid.NewGuid(),
+                ColID = "8T93N",
+                NameScientific = "Peloribates (Peloribates) szirakii Mahunka, 2008"
+            },
         };
 
         var strategy = dbContext.Database.CreateExecutionStrategy();
@@ -63,7 +96,16 @@ public class Worker(IServiceProvider serviceProvider,
             await using var transaction = await dbContext.Database
                 .BeginTransactionAsync(cancellationToken);
 
-            await dbContext.Taxa.AddAsync(firstTaxon, cancellationToken);
+            foreach (var taxon in taxons)
+            {
+                var existingTaxon = await dbContext.Taxa
+                    .FirstOrDefaultAsync(t => t.ColID == taxon.ColID, cancellationToken);
+                if (existingTaxon is not null)
+                {
+                    continue;
+                }
+                await dbContext.Taxa.AddAsync(taxon, cancellationToken);
+            }
             await dbContext.SaveChangesAsync(cancellationToken);
             await transaction.CommitAsync(cancellationToken);
         });
